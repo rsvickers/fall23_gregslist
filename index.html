@@ -33,6 +33,7 @@
           <!-- NAVLINKS -->
           <a href="#/about" class="nav-link">About</a>
           <a href="#/cars" class="nav-link">Cars</a>
+          <a href="#/houses" class="nav-link">Houses</a>
           <!-- TODO create a link tag to navigate to houses page -->
         </div>
       </div>
@@ -42,7 +43,83 @@
   <!-- SECTION -->
   <main id="router-view">
     <!-- PRIMARY VIEWPORT -->
-    <!-- TODO once you are on the houses page, write your HTML here -->
+
+    <div class="container-fluid">
+      <section class="row">
+        <div class="col-12 p-3 text-center">
+          <h1>Houses🏠</h1>
+        </div>
+      </section>
+      <!-- SECTION put in HouseViews at the end -->
+      <section class="row justify-content-center">
+        <div class="col-12 col-md-6 p-4 bg-dark">
+          <form onsubmit="app.HousesController.createHouse(event)" class="text-light">
+            <div>
+              <label for="year">Year</label>
+              <input id="year" type="number" required min="1500" max="2024" placeholder="House Year" name="year">
+
+              <label for="houseNumber">House Number</label>
+              <input id="houseNumber" type="number" required min="0" max="10000" placeholder="#️⃣1234"
+                name="houseNumber">
+
+              <label for="street">Street Name</label>
+              <input id="street" type="string" required minlength="0" maxlength="10000" placeholder="Street Name"
+                name="street">
+
+              <label for="city">City</label>
+              <input id="city" type="string" required minlength="0" maxlength="10000" placeholder="City" name="city">
+
+              <label for="bedrooms">Bedrooms</label>
+              <input id="bedrooms" type="number" required min="0" max="25" placeholder="🛏️" name="bedrooms">
+
+              <label for="bathrooms">Bathrooms</label>
+              <input id="bathrooms" type="number" required min="0" max="25" placeholder="🚽" name="bathrooms">
+
+              <label for="sqft">Square Feet</label>
+              <input id="sqft" type="number" required min="10" max="2500000" placeholder="Square Feet" name="sqft">
+
+              <label for="price">Price</label>
+              <input id="price" type="number" required min="10" max="25000000" placeholder="💰" name="price">
+
+              <label for="imgUrl">Image URL</label>
+              <input id="imgUrl" type="url" required minlength="0" maxlength="25000" placeholder="📸" name="imgUrl">
+
+              <label for="description">Description</label>
+              <textarea name="description" id="description" cols="3" rows="5"
+                placeholder="This house is nice..."></textarea>
+
+              <label for="isHaunted">Is the House haunted?</label>
+              <input id="isHaunted" class="checkbox" type="checkbox" name="price">
+              <div>
+                <button class="btn btn-secondary" type="submit">Submit 🏠</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="houses" class="row"></section>
+
+
+    </div>
+
+
+    <!-- <div class="col-8 mb-3">
+      <div class="d-flex shadow" style="border-color: ${this.color};">
+        <img class="car-img" src="${this.imgUrl}" alt="${this.make} ${this.model}">
+        <div class="p-3 w-100">
+          <h2>${this.ComputeIsNewIcon} ${this.year} ${this.make} ${this.model}</h2>
+          <p>${this.listedAt}</p>
+          <h3>${this.mileage} miles</h3>
+          <h3>$${this.price}</h3>
+          <h3>${this.runs ? 'It runs' : "It doesn't run"}</h3>
+          <p>${this.description}</p>
+          <div class="text-end">
+            <button onclick="app.CarsController.removeCar('${this.id}')" class="btn btn-danger">Delete Car</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
   </main>
 
