@@ -3,6 +3,7 @@ import { CarsController } from "./controllers/CarsController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
+import { CarsView } from "./views/CarsView.js";
 
 
 export const router = [
@@ -21,11 +22,9 @@ export const router = [
   {
     path: '#/cars',
     controller: CarsController,
-    view: null
-    // view: `
-    // <h1 class="p-3">Welcome to the Cars Page!</h1>
-    // <p class=""></p>
-    // `
+    view: CarsView
+    // view: null
   },
+  // TODO create a new route object for houses, start the view out as null
 
 ]
