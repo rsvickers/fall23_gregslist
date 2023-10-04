@@ -40,6 +40,16 @@ export class HousesController {
         }
     }
 
+    async removeHouse(houseId) {
+        const wantsToDelete = await Pop.confirm("Are you sure about that?!")
+
+        if (!wantsToDelete)
+            return
+        housesService.removeHouse(houseId)
+
+    }
+
+
 }
 
 

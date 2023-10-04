@@ -1,3 +1,6 @@
+import { generateId } from "../utils/GenerateId.js"
+
+
 export class House {
 
     /**
@@ -5,6 +8,7 @@ export class House {
      */
 
     constructor(data) {
+        this.id = generateId()
         this.year = data.year
         this.houseNumber = data.houseNumber
         this.street = data.street
@@ -18,7 +22,6 @@ export class House {
         this.imgUrl = data.imgUrl
         // SECTION not listed
         // this.listedAt = data.listedAt
-        // this.id = data.id || generateId()
     }
 
     get HouseCard() {
@@ -36,6 +39,9 @@ export class House {
                 <p>${this.sqft} Square Feet</p>
                 <p>${this.isHaunted ? 'This house has one or more 👻' : "It is not haunted!!"}</p>
                 <p>${this.description}</p>
+                <div>
+                <button onclick="app.HousesController.removeHouse('${this.id}')" class="btn btn-info">Delete 🏠</button>
+                </div>
             </div>
             </div>
         </div>
